@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3815,        132]
+NotebookOptionsPosition[      3427,        114]
+NotebookOutlinePosition[      3772,        129]
+CellTagsIndexPosition[      3729,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"xdot", "[", "t", "]"}], " ", "=", " ", 
+   RowBox[{"sigma", "*", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"y", "[", "t", "]"}], "-", 
+      RowBox[{"x", "[", "t", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ydot", " ", "[", "t", "]"}], "=", " ", 
+   RowBox[{
+    RowBox[{"r", "*", 
+     RowBox[{"x", "[", "t", "]"}]}], "-", 
+    RowBox[{"y", "[", "t", "]"}], "-", 
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "*", 
+     RowBox[{"z", "[", "t", "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"zdot", "[", "t", "]"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], "*", 
+     RowBox[{"y", "[", "t", "]"}]}], "-", 
+    RowBox[{"b", "*", 
+     RowBox[{"z", "[", "t", "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7850646906184683`*^9, 3.7850648113776197`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"flow", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"xdot", "[", "t", "]"}], ",", " ", 
+    RowBox[{"ydot", "[", "t", "]"}], ",", " ", 
+    RowBox[{"zdot", "[", "t", "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.785064793340108*^9, 3.785064823623622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"sigma", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "[", "t", "]"}]}], "+", 
+      RowBox[{"y", "[", "t", "]"}]}], ")"}]}], ",", 
+   RowBox[{
+    RowBox[{"r", " ", 
+     RowBox[{"x", "[", "t", "]"}]}], "-", 
+    RowBox[{"y", "[", "t", "]"}], "-", 
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], " ", 
+     RowBox[{"z", "[", "t", "]"}]}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t", "]"}], " ", 
+     RowBox[{"y", "[", "t", "]"}]}], "-", 
+    RowBox[{"b", " ", 
+     RowBox[{"z", "[", "t", "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7850648245233984`*^9, 3.7852124963962336`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "[", "T_", "]"}], ":=", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{"flow", ",", 
+       RowBox[{"Thread", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"xdot", "[", "0", "]"}], ",", 
+           RowBox[{"ydot", "[", "0", "]"}], ",", " ", 
+           RowBox[{"zdot", "[", "0", "]"}]}], "}"}], "\[Equal]", " ", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", " ", "0", ",", "0"}], "}"}]}], "]"}]}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xdot", "[", "t", "]"}], ",", 
+       RowBox[{"ydot", "[", "t", "]"}], ",", 
+       RowBox[{"zdot", "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "T"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.785212728355586*^9, 3.7852127605118055`*^9}}]
+},
+WindowSize->{1264, 637},
+WindowMargins->{{-12, Automatic}, {Automatic, 90}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 944, 29, 92, "Input"],
+Cell[CellGroupData[{
+Cell[1527, 53, 294, 7, 31, "Input"],
+Cell[1824, 62, 691, 22, 31, "Output"]
+}, Open  ]],
+Cell[2530, 87, 893, 25, 64, "Input"]
+}
+]
+*)
+
