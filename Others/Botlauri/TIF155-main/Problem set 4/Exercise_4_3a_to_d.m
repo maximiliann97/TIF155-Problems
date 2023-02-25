@@ -101,26 +101,26 @@ end
 
 toc
 
-%% a) Plot of the points.
-hold on
-title('Approximation of the fractal attractor of the Hénon map.')
-for i = 1:sqrtInit
-    for j = 1:sqrtInit
-        plot(squeeze(xList(i, j, 25:end)), squeeze(yList(i, j, 25:end)), '.')
-    end
-end
-xlabel('x')
-ylabel('y')
-hold off
+% %% a) Plot of the points.
+% hold on
+% title('Approximation of the fractal attractor of the Hénon map.')
+% for i = 1:sqrtInit
+%     for j = 1:sqrtInit
+%         plot(squeeze(xList(i, j, 25:end)), squeeze(yList(i, j, 25:end)), '.')
+%     end
+% end
+% xlabel('x')
+% ylabel('y')
+% hold off
 
-%% Plot of the boxes.
-set(gca, 'YDir', 'normal')
-colormap(flipud(gray))
-imagesc(boxesCounter > 100)
-pbaspect([1 1 1])
-xlabel('x')
-ylabel('y')
-title("Plot of the boxes.")
+% %% Plot of the boxes.
+% set(gca, 'YDir', 'normal')
+% colormap(flipud(gray))
+% imagesc(boxesCounter > 100)
+% pbaspect([1 1 1])
+% xlabel('x')
+% ylabel('y')
+% title("Plot of the boxes.")
 
 %% b) Loglog-plot of Iqs.
 hold on
@@ -132,30 +132,30 @@ xlabel('ln(1 / \epsilon)')
 title('(1 - q)^{-1} ln[I(q, \epsilon)] / \Sigma_1^{N_{boxes}} [p_k ln(1 / p_k)]')
 hold off
 
-%% Loglog-plot of Dqs.
-hold on
-plot(log(1./epsilons), (1-0)^(-1) * log(Iqs(:, 1)), '-o')
-plot(log(1./epsilons), Iqs(:, 2), '-+')
-plot(log(1./epsilons), (1-2)^(-1) * log(Iqs(:, 3)), '-*')
-markers = {'>','pentagram','s','d','^','v'};
-for q = 1:6
-    plot(log(1./epsilons), (1-Q(q))^(-1) * log(Iqs(:, q + 3)), 'Marker', markers{q})
-end
-legend('q = 0', 'q = 1', 'q = 2','q = 0.5', 'q = 1.5', 'q = 2.5','q = 3', 'q = 3.5', 'q = 4', 'Location', 'northwest')
-xlabel('ln(1 / \epsilon)')
-title('(1 - q)^{-1} ln[I(q, \epsilon)] / \Sigma_1^{N_{boxes}} [p_k ln(1 / p_k)] (The entries in the legend are NOT in the order of q value)')
-hold off
-
-%% d) Dqs vs q.
-hold on
-plot(0, D0(1), '-o')
-plot(1, D1(1), '-+')
-plot(2, D2(1), '-*')
-markers = {'>','pentagram','s','d','^','v'};
-for q = 1:6
-    plot(Q(q), Dqs(q), 'Marker', markers{q})
-end
-legend('q = 0', 'q = 1', 'q = 2','q = 0.5', 'q = 1.5', 'q = 2.5','q = 3', 'q = 3.5', 'q = 4', 'Location', 'southwest')
-xlabel('q')
-title('D_q vs q (The entries in the legend are NOT in the order of q value)')
-hold off
+% %% Loglog-plot of Dqs.
+% hold on
+% plot(log(1./epsilons), (1-0)^(-1) * log(Iqs(:, 1)), '-o')
+% plot(log(1./epsilons), Iqs(:, 2), '-+')
+% plot(log(1./epsilons), (1-2)^(-1) * log(Iqs(:, 3)), '-*')
+% markers = {'>','pentagram','s','d','^','v'};
+% for q = 1:6
+%     plot(log(1./epsilons), (1-Q(q))^(-1) * log(Iqs(:, q + 3)), 'Marker', markers{q})
+% end
+% legend('q = 0', 'q = 1', 'q = 2','q = 0.5', 'q = 1.5', 'q = 2.5','q = 3', 'q = 3.5', 'q = 4', 'Location', 'northwest')
+% xlabel('ln(1 / \epsilon)')
+% title('(1 - q)^{-1} ln[I(q, \epsilon)] / \Sigma_1^{N_{boxes}} [p_k ln(1 / p_k)] (The entries in the legend are NOT in the order of q value)')
+% hold off
+% 
+% %% d) Dqs vs q.
+% hold on
+% plot(0, D0(1), '-o')
+% plot(1, D1(1), '-+')
+% plot(2, D2(1), '-*')
+% markers = {'>','pentagram','s','d','^','v'};
+% for q = 1:6
+%     plot(Q(q), Dqs(q), 'Marker', markers{q})
+% end
+% legend('q = 0', 'q = 1', 'q = 2','q = 0.5', 'q = 1.5', 'q = 2.5','q = 3', 'q = 3.5', 'q = 4', 'Location', 'southwest')
+% xlabel('q')
+% title('D_q vs q (The entries in the legend are NOT in the order of q value)')
+% hold off
